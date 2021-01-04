@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
       - name: sreekanth
-        image: 341999083508.dkr.ecr.eu-west-2.amazonaws.com/sree:latest
+        image: 349948765351.dkr.ecr.ap-south-1.amazonaws.com/sreekanth:latest
         ports:
         - containerPort: 80
+
