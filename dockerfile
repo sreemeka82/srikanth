@@ -1,3 +1,19 @@
-FROM httpd
-COPY . /usr/local/apache/htdocs/
-
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: sreekanth-deployment
+spec:
+  selector:
+    matchLabels:
+      app: sreekanth
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: sreekanth
+    spec:
+      containers:
+      - name: sreekanth
+        image: 341999083508.dkr.ecr.eu-west-2.amazonaws.com/sree:latest
+        ports:
+        - containerPort: 80
