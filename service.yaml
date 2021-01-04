@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sreekanth-service
+  namespace: sreekanth
+spec:
+  type: LoadBalancer
+  selector:
+    app: sreekanth
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
